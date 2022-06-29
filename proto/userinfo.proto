@@ -1,0 +1,17 @@
+syntax="proto3";
+option go_package="./userService";
+//注意写完一行以后要注意： ;
+message userinfo{
+  string username = 1;
+  int32 age = 2;
+  PhoneType type=3;
+  repeated string hobby = 4;
+}
+
+//enum为关键字，作用为定义一种枚举类型
+enum PhoneType{
+  MOBILE =0;
+  HOME =1;
+  WORK =2;
+}
+//编译命令：protoc --go_out=./ *.proto
